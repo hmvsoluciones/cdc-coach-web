@@ -1,0 +1,9 @@
+.hideOnMobile {
+    display: none;
+  }
+  
+  @media (min-width: 769px) {
+    .hideOnMobile {
+      display: block; /* O el valor por defecto necesario */
+    }
+  }

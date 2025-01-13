@@ -14,6 +14,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>CDC Coach</title>
   <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/custom.css">
 
   <style>
     /* inter-300 - latin */
@@ -172,7 +173,7 @@
               <br />
               <br />
             </p>
-            <a href="#" class="link-fancy">Saber m&aacute;s
+            <a href="#" onclick="contactWhatsApp(event)" class="link-fancy">Saber m&aacute;s</a>
             </a>
           </div>
 
@@ -190,7 +191,7 @@
               </ul>
               <br />
             </p>
-            <a href="#" class="link-fancy">Saber m&aacute;s
+            <a href="#" onclick="contactWhatsApp(event)" class="link-fancy">Saber m&aacute;s</a>
             </a>
           </div>
 
@@ -211,7 +212,7 @@
                 </li>
               </ul>
             </p>
-            <a href="#" class="link-fancy">Saber m&aacute;s
+            <a href="#" onclick="contactWhatsApp(event)" class="link-fancy">Saber m&aacute;s</a>
             </a>
           </div>
 
@@ -226,7 +227,7 @@
                 <li>Desarrollar un plan.</li>
               </ul>
             </p>
-            <a href="#" class="link-fancy">Saber m&aacute;s
+            <a href="#" onclick="contactWhatsApp(event)" class="link-fancy">Saber m&aacute;s</a>
             </a>
           </div>
 
@@ -238,9 +239,9 @@
 
     <div class="py-vh-4 bg-gray-100 w-100 overflow-hidden" id="aboutus">
       <div class="container">
-
         <div class="row d-flex justify-content-between align-items-center">
-          <div class="col-lg-6">
+          <div class="col-lg-6 hideOnMobile">
+            
             <div class="row gx-5 d-flex">
               <div class="col-md-11">
                 <div class="shadow ratio ratio-16x9 rounded bg-cover bp-center align-self-end" data-aos="fade-right"
@@ -268,7 +269,7 @@
               Soy coach profesional con más de 30 años de experiencia en el ámbito financiero, ayudando a personas y equipos a superar desafíos, fortalecer habilidades y alcanzar su máximo potencial con compromiso, integridad y resultados.
             </p>
             <p>
-              <a href="#" class="link-fancy link-dark" data-aos="fade-left" data-aos-delay="400">Preguntar
+              <a href="#" class="link-fancy link-dark" data-aos="fade-left" data-aos-delay="400" onclick="contactWhatsApp(event)">Preguntar
               </a>
             </p>
           </div>
@@ -295,7 +296,7 @@
 
     <div class="position-relative overflow-hidden w-100 bg-light" id="gallery">
       <div class="container-fluid">
-        <div class="row overflow-scroll">
+        <div class="row overflow-scroll hideOnMobile">
           <div class="col-12">
             <div class="row vw-100 px-0 py-vh-5 d-flex align-items-center scrollx">
               <div class="col-md-2" data-aos="fade-up">
@@ -355,7 +356,7 @@
                 y lograr el equilibrio que necesitas.</h2>
             </div>
             <div class="col-12">
-              <a href="#" class="btn btn-warning btn-xl shadow me-3 mt-4" data-aos="fade-down">Contactame</a>
+              <a href="#" class="btn btn-warning btn-xl shadow me-3 mt-4" data-aos="fade-down" onclick="contactWhatsApp(event)">Contactame</a>
             </div>
           </div>
 
@@ -368,7 +369,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-lg-10 col-xl-8 text-center">
             <h2 class="display-6">Reseñas de nuestros mentees</h2>
-            <p class="lead">He colaborado en el crecimiento de empresas y particulares, brindando orientación y apoyo en el cumplimiento de sus objetivos</p>
+            <p class="lead">He colaborado en el crecimiento de empresas y particulares, brindando orientación y apoyo en el cumplimiento de sus objetivos.</p>
           </div>
           <div class="col-12 mt-4">
             <div class="row row-cols-1 row-cols-md-2 g-5 d-flex align-items-center">
@@ -556,7 +557,7 @@
               </div>
               <div class="col-md-9 flex-fill">
                 <h3 class="h5 my-2">Tel&eacute;fono</h3>
-                <p>5554122206.</p>
+                <p>5554122206</p>
               </div>
             </div>
           </div>
@@ -656,6 +657,20 @@
 
       console.log(scrollpos)
     })
+  </script>
+  <script>
+    function contactWhatsApp(e) {
+      // Evita la acción predeterminada del enlace
+      e.preventDefault();
+
+      const phoneNumber = "5554122206";
+      const message = "Hola, me gustaría conocer más acerca de los servicios de coaching.";
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+      // Redirige al enlace de WhatsApp
+      window.open(whatsappURL, "_blank");
+    }
   </script>
 
 </body>
